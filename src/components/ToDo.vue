@@ -1,10 +1,8 @@
 <template>
   <section :class="$style.todo">
-    <div :class="$style.wrapper">
-      <Title />
-      <TaskList />
-      <Footer />
-    </div>
+    <Title />
+    <TaskList />
+    <Footer />
   </section>
 </template>
 
@@ -24,19 +22,6 @@ export default {
 
 <style lang="scss" module>
 .todo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(../assets/img/background.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  font-family: "Open Sans";
-  font-size: 1.25rem;
-}
-
-.wrapper {
   width: 100%;
   max-width: 33.75rem;
   box-shadow: 0px 8px 35px 5px rgba($color: $secondary-600, $alpha: 0.5);
