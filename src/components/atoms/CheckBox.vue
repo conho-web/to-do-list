@@ -55,11 +55,11 @@ export default {
     transition: all 0.2s ease;
   }
 
-  & input:checked ~ span {
+  input:checked ~ span {
     background-color: $secondary-400;
   }
 
-  & input:checked ~ span:after {
+  input:checked ~ span:after {
     display: block;
   }
 
