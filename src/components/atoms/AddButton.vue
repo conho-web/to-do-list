@@ -9,19 +9,19 @@
   padding: 0.625rem;
   width: 100%;
   font-size: 1.25rem;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23FFCA93FF' stroke-width='2' stroke-dasharray='16' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23FFCA93FF' stroke-width='3' stroke-dasharray='16' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
   border-radius: 0.625rem;
   border: none;
-  background-color: #ffecd8;
-  color: #ffca93;
+  background-color: $secondary-200;
+  color: $secondary-400;
   border-radius: 0.625rem;
   cursor: pointer;
   transition: all 0.2s ease;
-}
 
-.add:hover {
-  transition: all 0.2s ease;
-  background-color: #ffca93;
-  color: #ffecd8;
+  &:hover {
+    transition: all 0.2s ease;
+    background-color: $secondary-300;
+    color: $secondary-200;
+  }
 }
 </style>

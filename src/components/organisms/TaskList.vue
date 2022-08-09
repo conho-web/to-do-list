@@ -1,8 +1,11 @@
 <template>
   <div :class="$style.content">
-    <Task title="Task 1" />
-    <Task title="Task 2" />
-    <Task title="Task 3" />
+    <Task
+      v-for="task in tasks"
+      :key="task.id"
+      :title="task.title"
+      :isChecked="task.isChecked"
+    />
     <AddButton />
   </div>
 </template>
@@ -12,6 +15,28 @@ import Task from "../molecules/Task.vue";
 import AddButton from "../atoms/AddButton.vue";
 
 export default {
+  data() {
+    return {
+      tasks: [
+        {
+          id: "1",
+          title: "Task 1",
+          isChecked: false,
+        },
+        {
+          id: "2",
+          title: "Task 2",
+          isChecked: true,
+        },
+        {
+          id: "3",
+          title: "Task 3",
+          isChecked: false,
+        },
+      ],
+    };
+  },
+
   components: {
     Task,
     AddButton,
@@ -21,7 +46,7 @@ export default {
 
 <style lang="scss" module>
 .content {
-  background-color: #fff4e9;
+  background-color: $secondary-100;
   padding: 2rem;
 }
 </style>

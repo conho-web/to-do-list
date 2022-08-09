@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.task">
     <div :class="$style.inputWrapper">
-      <CheckBox />
+      <CheckBox :isChecked="isChecked" />
       <Name>{{ title }}</Name>
     </div>
     <DeleteButton />
@@ -20,7 +20,14 @@ export default {
     DeleteButton,
   },
   props: {
-    title: String,
+    title: {
+      type: String,
+      default: "",
+    },
+    isChecked: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -36,7 +43,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0.625rem 1.25rem;
-  background-color: #ffdfbe;
+  background-color: $secondary-200;
   border-radius: 0.625rem;
   margin-bottom: 1.625rem;
 }

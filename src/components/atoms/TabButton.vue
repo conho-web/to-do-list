@@ -1,13 +1,16 @@
 <template>
-  <button :class="[$style.showButton, $style.showAll]">
-    {{ title }}
+  <button :class="[$style.showButton, { [$style.active]: isActive }]">
+    <slot />
   </button>
 </template>
 
 <script>
 export default {
   props: {
-    title: String,
+    isActive: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -18,13 +21,17 @@ export default {
   border: none;
   margin-right: 1.625rem;
   font-size: 1.25rem;
-  color: #7f4b136b;
+  color: $secondary-700;
   cursor: pointer;
   border-radius: 0.625rem;
   padding: 3px 0.625rem;
-}
 
-.showButton:last-child {
-  margin-right: 0px;
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  &.active {
+    border: 1px solid $secondary-700;
+  }
 }
 </style>

@@ -1,7 +1,11 @@
 <template>
-  <p>1/3 left</p>
+  <p :class="$style.counter">1/3 left</p>
 </template>
 
 <script></script>
 
-<style lang="scss" module></style>
+<style lang="scss" module>
+.counter {
+  color: $secondary-700;
+}
+</style>

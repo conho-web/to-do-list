@@ -27,7 +27,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../assets/background.jpg);
+  background-image: url(../assets/img/background.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -39,7 +39,7 @@ export default {
 .wrapper {
   width: 100%;
   max-width: 33.75rem;
-  box-shadow: 0px 0.5rem 2.25rem 0.5rem #fe9262;
-  border: 2px solid #ffca93;
+  box-shadow: 0px 8px 35px 5px rgba($color: $secondary-600, $alpha: 0.5);
+  border: 2px solid $secondary-300;
 }
 </style>

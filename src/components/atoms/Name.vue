@@ -8,7 +8,7 @@
 
 <style lang="scss" module>
 .name {
-  color: #7f4b13;
+  color: $secondary-700;
   margin-left: 1.25rem;
 }
 </style>
