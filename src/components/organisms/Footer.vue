@@ -3,9 +3,10 @@
     <CounterTasks />
     <div :class="$style.show">
       <TabButton
-        v-for="button in buttons"
+        v-for="button in getButtons"
         :key="button.id"
         :isActive="button.isActive"
+        @click.native="changeTabStatus(button.text)"
       >
         {{ button.text }}
       </TabButton>
@@ -14,37 +15,26 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
 import TabButton from "../atoms/TabButton.vue";
 import CounterTasks from "../atoms/CounterTasks.vue";
 
 export default {
-  data() {
-    return {
-      buttons: [
-        {
-          id: "1",
-          text: "All",
-          isActive: true,
-        },
-        {
-          id: "2",
-          text: "Active",
-          isActive: false,
-        },
-        {
-          id: "3",
-          text: "Completed",
-          isActive: false,
-        },
-      ],
-    };
+  computed: {
+    ...mapGetters(["getButtons"]),
+  },
+  methods: {
+    ...mapMutations(["changeTabStatus"]),
   },
   components: {
     TabButton,
     CounterTasks,
   },
   props: {
-    title: String,
+    title: {
+      type: String,
+      default: "",
+    },
   },
 };
 </script>

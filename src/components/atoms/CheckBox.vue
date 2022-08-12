@@ -20,7 +20,7 @@ export default {
 .inputContainer {
   display: block;
   position: relative;
-  width: 1.5rem;
+  flex: 0 0 1.5rem;
   height: 1.5rem;
   border-radius: 0.375rem;
   background: transparent;

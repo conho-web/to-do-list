@@ -1,8 +1,18 @@
 <template>
-  <p :class="$style.counter">1/3 left</p>
+  <p :class="$style.counter">
+    {{ getActiveTasks.length }}/{{ getTasks.length }} left
+  </p>
 </template>
 
-<script></script>
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters(["getTasks", "getActiveTasks"]),
+  },
+};
+</script>
 
 <style lang="scss" module>
 .counter {
