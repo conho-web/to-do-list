@@ -3,7 +3,7 @@
     <CounterTasks />
     <div :class="$style.show">
       <TabButton
-        v-for="button in getButtons"
+        v-for="button in tabButtons"
         :key="button.id"
         :isActive="button.isActive"
         @click.native="changeTabStatus(button.text)"
@@ -21,7 +21,7 @@ import CounterTasks from "../atoms/CounterTasks.vue";
 
 export default {
   computed: {
-    ...mapGetters(["getButtons"]),
+    ...mapGetters(["tabButtons"]),
   },
   methods: {
     ...mapMutations(["changeTabStatus"]),

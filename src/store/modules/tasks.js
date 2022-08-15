@@ -53,7 +53,7 @@ export default {
       return state.tasks.filter((task) => task.isChecked === false);
     },
 
-    getButtons(state) {
+    tabButtons(state) {
       return state.buttons;
     },
 
@@ -91,7 +91,7 @@ export default {
         });
       } else {
         if (!nameTask) {
-          alert("Enter the task text");
+          alert("Enter the task text!");
         } else {
           state.tasks.push({
             id: 1,
@@ -107,7 +107,6 @@ export default {
     },
 
     changeTabStatus(state, text) {
-      console.log(text);
       state.buttons = state.buttons.map((button) =>
         button.text === text
           ? { ...button, isActive: true }

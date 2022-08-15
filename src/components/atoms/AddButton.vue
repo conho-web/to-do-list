@@ -1,5 +1,5 @@
 <template>
-  <form action="#" class="wrapper">
+  <div class="wrapper">
     <input
       type="text"
       :class="$style.field"
@@ -7,7 +7,7 @@
       placeholder="Enter the task text"
     />
     <button :class="$style.add" @click="addTask">Add a new task</button>
-  </form>
+  </div>
 </template>
 
 <script>
