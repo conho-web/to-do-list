@@ -4,8 +4,6 @@
   </div>
 </template>
 
-<script></script>
-
 <style lang="scss" module>
 .wrapper {
   background-color: $secondary-300;

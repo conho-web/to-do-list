@@ -1,6 +1,6 @@
 <template>
   <label :class="$style.inputContainer">
-    <input type="checkbox" :checked="isChecked" />
+    <input type="checkbox" :checked="isChecked" @click="$emit('click')" />
     <span :class="$style.checkmark"></span>
   </label>
 </template>
@@ -20,7 +20,7 @@ export default {
 .inputContainer {
   display: block;
   position: relative;
-  width: 1.5rem;
+  flex: 0 0 1.5rem;
   height: 1.5rem;
   border-radius: 0.375rem;
   background: transparent;

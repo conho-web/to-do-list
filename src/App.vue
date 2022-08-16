@@ -33,4 +33,10 @@ export default {
     font-size: 10px !important;
   }
 }
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 9px !important;
+  }
+}
 </style>

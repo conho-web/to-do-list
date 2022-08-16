@@ -4,8 +4,6 @@
   </p>
 </template>
 
-<script></script>
-
 <style lang="scss" module>
 .name {
   color: $secondary-700;

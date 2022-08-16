@@ -1,5 +1,5 @@
 <template>
-  <button :class="$style.delete"></button>
+  <button :class="$style.delete" @click="$emit('click')"></button>
 </template>
 
 <script></script>

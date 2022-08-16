@@ -1,11 +1,11 @@
 <template>
-  <div :class="$style.task">
+  <label :class="$style.task">
     <div :class="$style.inputWrapper">
-      <CheckBox :isChecked="isChecked" />
+      <CheckBox @click="$emit('change')" />
       <Name>{{ title }}</Name>
     </div>
-    <DeleteButton />
-  </div>
+    <DeleteButton @click="$emit('delete')" />
+  </label>
 </template>
 
 <script>
@@ -24,10 +24,6 @@ export default {
       type: String,
       default: "",
     },
-    isChecked: {
-      type: Boolean,
-      default: false,
-    },
   },
 };
 </script>
@@ -36,6 +32,7 @@ export default {
 .inputWrapper {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .task {
@@ -46,5 +43,13 @@ export default {
   background-color: $secondary-200;
   border-radius: 0.625rem;
   margin-bottom: 1.625rem;
+  transition: all 0.3s ease;
+  border: 2px solid $secondary-200;
+
+  &:hover {
+    background-color: $secondary-100;
+    border: 2px solid $secondary-400;
+    cursor: pointer;
+  }
 }
 </style>
