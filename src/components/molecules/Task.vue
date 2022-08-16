@@ -1,10 +1,10 @@
 <template>
   <label :class="$style.task">
     <div :class="$style.inputWrapper">
-      <CheckBox @click.native="$emit('change')" />
+      <CheckBox @click="$emit('change')" />
       <Name>{{ title }}</Name>
     </div>
-    <DeleteButton @click.native="$emit('delete')" />
+    <DeleteButton @click="$emit('delete')" />
   </label>
 </template>
 

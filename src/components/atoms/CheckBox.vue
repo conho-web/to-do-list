@@ -1,6 +1,6 @@
 <template>
   <label :class="$style.inputContainer">
-    <input type="checkbox" :checked="isChecked" />
+    <input type="checkbox" :checked="isChecked" @click="$emit('click')" />
     <span :class="$style.checkmark"></span>
   </label>
 </template>
