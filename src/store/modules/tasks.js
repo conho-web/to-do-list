@@ -1,26 +1,26 @@
 export default {
   state: {
     tasks: [
-      {
-        id: 1,
-        title: "Task 1",
-        isChecked: false,
-      },
-      {
-        id: 2,
-        title: "Task 2",
-        isChecked: false,
-      },
-      {
-        id: 3,
-        title: "Task 3",
-        isChecked: false,
-      },
-      {
-        id: 4,
-        title: "Task 4",
-        isChecked: false,
-      },
+      // {
+      //   id: 1,
+      //   title: "Task 1",
+      //   isChecked: false,
+      // },
+      // {
+      //   id: 2,
+      //   title: "Task 2",
+      //   isChecked: false,
+      // },
+      // {
+      //   id: 3,
+      //   title: "Task 3",
+      //   isChecked: false,
+      // },
+      // {
+      //   id: 4,
+      //   title: "Task 4",
+      //   isChecked: false,
+      // },
     ],
 
     buttons: [
@@ -69,9 +69,17 @@ export default {
     },
   },
 
-  actions: {},
+  actions: {
+    getFromStorage(context) {
+      context.commit("getFromStorage");
+    },
+  },
 
   mutations: {
+    getFromStorage(state) {
+      state.tasks = JSON.parse(localStorage.getItem("tasks")) || new Array();
+    },
+
     changeTaskStatus(state, id) {
       state.tasks.map((task) => {
         if (task.id == id) {
@@ -89,6 +97,7 @@ export default {
           title: nameTask,
           isChecked: false,
         });
+        localStorage.setItem("tasks", JSON.stringify(state.tasks));
       } else {
         if (!nameTask) {
           alert("Enter the task text!");
@@ -98,12 +107,14 @@ export default {
             title: nameTask,
             isChecked: false,
           });
+          localStorage.setItem("tasks", JSON.stringify(state.tasks));
         }
       }
     },
 
     deleteTask(state, id) {
       state.tasks = state.tasks.filter((task) => task.id != id);
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
 
     changeTabStatus(state, text) {
