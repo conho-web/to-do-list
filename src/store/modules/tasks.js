@@ -1,27 +1,6 @@
 export default {
   state: {
-    tasks: [
-      // {
-      //   id: 1,
-      //   title: "Task 1",
-      //   isChecked: false,
-      // },
-      // {
-      //   id: 2,
-      //   title: "Task 2",
-      //   isChecked: false,
-      // },
-      // {
-      //   id: 3,
-      //   title: "Task 3",
-      //   isChecked: false,
-      // },
-      // {
-      //   id: 4,
-      //   title: "Task 4",
-      //   isChecked: false,
-      // },
-    ],
+    tasks: [],
 
     buttons: [
       {
@@ -77,7 +56,7 @@ export default {
 
   mutations: {
     getFromStorage(state) {
-      state.tasks = JSON.parse(localStorage.getItem("tasks")) || new Array();
+      state.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     },
 
     changeTaskStatus(state, id) {
