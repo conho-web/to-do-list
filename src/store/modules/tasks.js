@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 export default {
   state: {
     tasks: [],
@@ -48,12 +50,6 @@ export default {
     },
   },
 
-  actions: {
-    getFromStorage(context) {
-      context.commit("getFromStorage");
-    },
-  },
-
   mutations: {
     getFromStorage(state) {
       state.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -68,27 +64,17 @@ export default {
     },
 
     addNewTask(state, nameTask) {
-      if (nameTask && state.tasks.length != 0) {
-        let lastId = state.tasks.slice(-1)[0].id;
-
+      if (nameTask) {
         state.tasks.push({
-          id: lastId + 1,
+          id: uuidv4(),
           title: nameTask,
           isChecked: false,
         });
         localStorage.setItem("tasks", JSON.stringify(state.tasks));
       } else {
-        if (!nameTask) {
-          alert("Enter the task text!");
-        } else {
-          state.tasks.push({
-            id: 1,
-            title: nameTask,
-            isChecked: false,
-          });
-          localStorage.setItem("tasks", JSON.stringify(state.tasks));
-        }
+        alert("Enter the task text!");
       }
+      console.log(state.tasks);
     },
 
     deleteTask(state, id) {

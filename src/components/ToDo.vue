@@ -18,7 +18,7 @@ export default {
     Footer,
   },
   mounted() {
-    this.$store.dispatch("getFromStorage");
+    this.$store.commit("getFromStorage");
   },
 };
 </script>

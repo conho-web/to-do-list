@@ -5,8 +5,8 @@
     </p>
     <Task
       v-else
-      v-for="task in getFilteredTasks"
-      :key="task.id"
+      v-for="(task, key) in getFilteredTasks"
+      :key="key"
       :id="task.id"
       :title="task.title"
       :isChecked="task.isChecked"
