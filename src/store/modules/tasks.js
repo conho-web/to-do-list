@@ -64,17 +64,16 @@ export default {
     },
 
     addNewTask(state, nameTask) {
-      if (nameTask) {
+      if (!nameTask) {
+        alert("Enter the task text!");
+      } else {
         state.tasks.push({
           id: uuidv4(),
           title: nameTask,
           isChecked: false,
         });
         localStorage.setItem("tasks", JSON.stringify(state.tasks));
-      } else {
-        alert("Enter the task text!");
       }
-      console.log(state.tasks);
     },
 
     deleteTask(state, id) {
