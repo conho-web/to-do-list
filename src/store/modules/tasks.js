@@ -66,14 +66,14 @@ export default {
     addNewTask(state, nameTask) {
       if (!nameTask) {
         alert("Enter the task text!");
-      } else {
-        state.tasks.push({
-          id: uuidv4(),
-          title: nameTask,
-          isChecked: false,
-        });
-        localStorage.setItem("tasks", JSON.stringify(state.tasks));
+        return;
       }
+      state.tasks.push({
+        id: uuidv4(),
+        title: nameTask,
+        isChecked: false,
+      });
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
 
     deleteTask(state, id) {
