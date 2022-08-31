@@ -17,6 +17,9 @@ export default {
     TaskList,
     Footer,
   },
+  mounted() {
+    this.$store.commit("getFromStorage");
+  },
 };
 </script>
 
