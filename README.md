@@ -1,4 +1,7 @@
-# stage-3
+# TO DO LIST
+
+![{53F1610A-7900-4CEE-A6A0-5CE4D79D3133}](https://github.com/user-attachments/assets/2fc84037-2bda-41bf-9997-318dbc7e3143)
+
 
 ## Project setup
 ```
